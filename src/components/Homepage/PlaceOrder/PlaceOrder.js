@@ -11,12 +11,12 @@ const PlaceOrder = () => {
     const { id } = useParams();
     const [booking, setBooking] = useState({});
     useEffect(() => {
-        const uri = `https://dark-labyrinth-92476.herokuapp.com/allbooking/${id}`;
+        const uri = `http://localhost:4000/allbooking/${id}`;
         fetch(uri)
             .then((res) => res.json())
             .then((data) => setBooking(data));
     }, [id]);
-    // console.log(booking);
+    console.log(booking);
     return (
         <div className="place-order">
             <h2 className="text-center my-5">

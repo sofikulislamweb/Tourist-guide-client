@@ -17,7 +17,7 @@ const PlaceForm = (props) => {
     const phoneRef = useRef();
 
     const { user } = useAuth();
-    const { name, description, price, img } = props?.booking;
+    const { Name, description, price, img } = props?.booking;
 
     const handleSubmit = (e) => {
         const name = nameRef.current.value;
@@ -42,7 +42,7 @@ const PlaceForm = (props) => {
             phone,
         };
         // console.log(saveBooking);
-        const uri = "https://dark-labyrinth-92476.herokuapp.com/placebooking";
+        const uri = "http://localhost:4000/placebooking";
         fetch(uri, {
             method: "POST",
             headers: {
@@ -66,7 +66,7 @@ const PlaceForm = (props) => {
                     type="text"
                     ref={placeNameRef}
                     placeholder="Place Name"
-                    value={name || ""}
+                    value={Name || ""}
                     readOnly
                 />
                 <textarea
