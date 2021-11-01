@@ -7,7 +7,7 @@ import "./ManageBooking.css";
 const ManageBooking = () => {
     const [manageeBooking, setManageeBooking] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:4000/manageallorder")
+        fetch("https://sleepy-chamber-61570.herokuapp.com/manageallorder")
             .then((res) => res.json())
             .then((data) => setManageeBooking(data));
     }, [manageeBooking]);
@@ -16,7 +16,7 @@ const ManageBooking = () => {
         const proceed = window.confirm("are you sure, you want to delete!!!");
         if (proceed) {
             fetch(
-                `http://localhost:4000/mybooking/${id}`,
+                `https://sleepy-chamber-61570.herokuapp.com/mybooking/${id}`,
                 {
                     method: "DELETE",
                 }
@@ -40,7 +40,7 @@ const ManageBooking = () => {
         );
         updatestatus.status = "approved";
 
-        const uri = `http://localhost:4000/mybooking/${id}`;
+        const uri = `https://sleepy-chamber-61570.herokuapp.com/mybooking/${id}`;
         fetch(uri, {
             method: "PUT",
             headers: {

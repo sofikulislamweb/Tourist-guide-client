@@ -42,7 +42,7 @@ const PlaceForm = (props) => {
             phone,
         };
         // console.log(saveBooking);
-        const uri = "http://localhost:4000/placebooking";
+        const uri = "https://sleepy-chamber-61570.herokuapp.com/placebooking";
         fetch(uri, {
             method: "POST",
             headers: {
